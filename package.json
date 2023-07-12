@@ -1,0 +1,26 @@
+{
+    "name": "Food Chatter Code",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+	"model:access": "python3 topic_modeling_gsdmm.py access > ./data/generated/report_access.txt",
+	"model:comm": "python3 topic_modeling_gsdmm.py comm > ./data/generated/report_comm.txt",
+	"model:EBT": "python3 topic_modeling_gsdmm.py EBT > ./data/generated/report_EBT.txt",
+	"model:food_insecurity": "python3 topic_modeling_gsdmm.py food_insecurity > ./data/generated/report_food_insecurity.txt",
+	"model:food_justice": "python3 topic_modeling_gsdmm.py food_justice > ./data/generated/report_food_justice.txt",
+	"model:food_pantries": "python3 topic_modeling_gsdmm.py food_pantries > ./data/generated/report_food_pantries.txt",
+	"model:food_prices": "python3 topic_modeling_gsdmm.py food_prices > ./data/generated/report_food_prices.txt",
+	"model:food_quality": "python3 topic_modeling_gsdmm.py food_quality > ./data/generated/report_food_quality.txt",
+	"model:grocery_stores_brands": "python3 topic_modeling_gsdmm.py grocery_stores_brands > ./data/generated/report_grocery_stores_brands.txt",
+	"model:struggle": "python3 topic_modeling_gsdmm.py struggle > ./data/generated/report_struggle.txt",
+	"model:WIC": "python3 topic_modeling_gsdmm.py WIC > ./data/generated/report_WIC.txt",
+	"generate_wordcloud": "wordcloud_cli --text data/generated/wordcloud_raw.txt --imagefile ./data/generated/wordcloud.png --height 900 --width 1600 --background white --stopwords ./data/raw/stopwords_en.txt --min_word_length 3 --colormap Set2 --margin 8",
+	"generate_wordcloud:distinct": "wordcloud_cli --text data/generated/wordcloud_raw_distinct.txt --imagefile ./data/generated/wordcloud_distinct.png --height 900 --width 1600 --background white --stopwords ./data/raw/stopwords_en.txt --min_word_length 3 --colormap Set2 --margin 8",
+	"generate_wordcloud:distinct:no_min": "wordcloud_cli --text data/generated/wordcloud_raw_distinct.txt --imagefile ./data/generated/wordcloud_distinct_no_min.png --height 900 --width 1600 --background white --colormap Set2 --margin 8"
+    },
+    "dependencies": {
+	"csv-parse": "^5.3.1",
+	"json2csv": "^5.0.7"
+    }
+}
